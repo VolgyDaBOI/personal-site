@@ -7,17 +7,17 @@ import { motion } from "framer-motion";
 const socials = [
   {
     name: "GitHub",
-    href: "https://github.com/michaelvolgin",
+    href: "https://github.com/VolgyDaBOI",
     icon: Github,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/michaelvolgin",
+    href: "https://www.linkedin.com/in/michael-volgin/",
     icon: Linkedin,
   },
   {
     name: "X",
-    href: "https://x.com/michaelvolgin",
+    href: "https://x.com/michag0d",
     icon: Twitter,
   },
 ];

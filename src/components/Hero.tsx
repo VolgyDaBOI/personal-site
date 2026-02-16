@@ -14,8 +14,7 @@ export function Hero() {
           Michael Volgin
         </h1>
         <p className="mt-3 text-muted-foreground leading-relaxed max-w-lg">
-          Developer and builder. I build tools and products that solve real
-          problems. Currently focused on shipping fast and learning every day.
+          Founding Engineer @ Enclave, AI &amp; App Sec.
         </p>
       </motion.div>
     </section>
