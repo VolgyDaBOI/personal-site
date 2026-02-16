@@ -4,7 +4,6 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 
@@ -53,19 +52,6 @@ export default async function BlogPostPage({
             <span>&middot;</span>
             <span>{post.readingTime}</span>
           </div>
-          {post.tags.length > 0 && (
-            <div className="mt-2 flex gap-1.5">
-              {post.tags.map((tag) => (
-                <Badge
-                  key={tag}
-                  variant="secondary"
-                  className="text-[11px] font-normal px-1.5 py-0"
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          )}
         </header>
 
         <Separator className="mb-8" />
