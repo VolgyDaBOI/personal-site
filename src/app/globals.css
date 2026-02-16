@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --accent-blue: #6366f1;
+  --accent-purple: #a855f7;
+  --card-bg: #141414;
+  --card-border: #1e1e1e;
+  --muted: #a1a1aa;
 }
 
 @theme inline {
@@ -12,15 +17,83 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent-purple);
+  color: white;
+}
+
+/* Prose styling for blog posts */
+.prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: white;
+  --tw-prose-links: var(--accent-blue);
+  --tw-prose-code: var(--accent-purple);
+  --tw-prose-bold: white;
+  --tw-prose-quotes: var(--muted);
+  --tw-prose-counters: var(--muted);
+  --tw-prose-bullets: var(--muted);
+  --tw-prose-hr: var(--card-border);
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: white;
+  font-weight: 700;
+}
+
+.prose p, .prose li {
+  color: var(--foreground);
+  line-height: 1.8;
+}
+
+.prose a {
+  color: var(--accent-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.prose a:hover {
+  color: var(--accent-purple);
+}
+
+.prose blockquote {
+  border-left-color: var(--accent-blue);
+  color: var(--muted);
+}
+
+.prose strong {
+  color: white;
+}
+
+.prose code {
+  color: var(--accent-purple);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875em;
+}
+
+.prose pre {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  color: var(--foreground);
+  font-size: 0.875rem;
+}
+
+.prose hr {
+  border-color: var(--card-border);
+}
+
+.prose ul, .prose ol {
+  padding-left: 1.5rem;
 }
