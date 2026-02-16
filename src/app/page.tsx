@@ -13,26 +13,25 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <SocialLinks />
 
-      <AnimatedSection delay={0.2}>
-        <SocialLinks />
-      </AnimatedSection>
-
-      <Separator className="my-12" />
+      <Separator className="my-10" />
 
       {recentPosts.length > 0 && (
-        <AnimatedSection delay={0.3}>
+        <AnimatedSection delay={0.15}>
           <section>
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-semibold tracking-tight">Recent Posts</h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+                Writing
+              </h2>
               <Link
                 href="/blog"
-                className="text-sm text-muted-foreground hover:text-[var(--accent-blue)] transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                View all &rarr;
+                All posts &rarr;
               </Link>
             </div>
-            <div className="flex flex-col gap-3">
+            <div>
               {recentPosts.map((post) => (
                 <BlogCard key={post.slug} post={post} />
               ))}
