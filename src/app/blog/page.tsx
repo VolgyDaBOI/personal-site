@@ -14,26 +14,28 @@ export default function BlogPage() {
   return (
     <>
       <AnimatedSection>
-        <Link
-          href="/"
-          className="text-sm text-[var(--muted)] hover:text-[var(--accent-blue)] transition-colors"
-        >
-          &larr; Home
-        </Link>
-        <h1 className="mt-6 text-4xl font-bold">Blog</h1>
-        <p className="mt-4 text-[var(--muted)]">
-          Thoughts on engineering, building products, and life.
-        </p>
+        <div className="mb-12">
+          <Link
+            href="/"
+            className="text-sm text-muted-foreground hover:text-[var(--accent-blue)] transition-colors"
+          >
+            &larr; Home
+          </Link>
+          <h1 className="mt-6 text-3xl font-bold tracking-tight">Blog</h1>
+          <p className="mt-2 text-muted-foreground">
+            Thoughts on engineering, building products, and life.
+          </p>
+        </div>
       </AnimatedSection>
 
-      <div className="mt-12 flex flex-col gap-4">
+      <div className="flex flex-col gap-3">
         {posts.map((post, i) => (
           <AnimatedSection key={post.slug} delay={i * 0.1}>
             <BlogCard post={post} />
           </AnimatedSection>
         ))}
         {posts.length === 0 && (
-          <p className="text-[var(--muted)]">No posts yet. Check back soon!</p>
+          <p className="text-muted-foreground">No posts yet. Check back soon!</p>
         )}
       </div>
     </>

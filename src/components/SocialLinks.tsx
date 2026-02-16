@@ -1,6 +1,7 @@
 "use client";
 
 import { Github, Linkedin, Twitter } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const socials = [
@@ -23,20 +24,30 @@ const socials = [
 
 export function SocialLinks() {
   return (
-    <div className="flex gap-5">
-      {socials.map((social) => (
-        <motion.a
+    <div className="flex gap-3">
+      {socials.map((social, i) => (
+        <motion.div
           key={social.name}
-          href={social.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.1 }}
-          className="group relative p-3 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] transition-colors hover:border-[var(--accent-blue)]"
-          aria-label={social.name}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.3 + i * 0.1 }}
         >
-          <social.icon className="w-5 h-5 text-[var(--muted)] transition-colors group-hover:text-[var(--accent-blue)]" />
-          <div className="absolute inset-0 rounded-xl bg-[var(--accent-blue)] opacity-0 blur-xl transition-opacity group-hover:opacity-10" />
-        </motion.a>
+          <Button
+            variant="outline"
+            size="icon"
+            asChild
+            className="h-10 w-10 rounded-lg transition-colors hover:text-[var(--accent-blue)] hover:border-[var(--accent-blue)]"
+          >
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.name}
+            >
+              <social.icon className="h-4 w-4" />
+            </a>
+          </Button>
+        </motion.div>
       ))}
     </div>
   );

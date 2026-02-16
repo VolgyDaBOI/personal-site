@@ -4,6 +4,8 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 
 export function generateStaticParams() {
@@ -36,43 +38,44 @@ export default async function BlogPostPage({
 
   return (
     <AnimatedSection>
-      <article className="prose max-w-none">
+      <article>
         <Link
           href="/blog"
-          className="text-sm text-[var(--muted)] hover:text-[var(--accent-blue)] transition-colors no-underline"
+          className="text-sm text-muted-foreground hover:text-[var(--accent-blue)] transition-colors"
         >
           &larr; Back to blog
         </Link>
 
-        <header className="mt-8 mb-12">
-          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-          <div className="flex items-center gap-3 text-sm text-[var(--muted)]">
+        <header className="mt-8 mb-8">
+          <h1 className="text-3xl font-bold tracking-tight mb-3">{post.title}</h1>
+          <div className="flex items-center gap-3 text-sm text-muted-foreground">
             <time>{post.date}</time>
             <span>&middot;</span>
             <span>{post.readingTime}</span>
           </div>
           {post.tags.length > 0 && (
-            <div className="mt-4 flex gap-2">
+            <div className="mt-3 flex gap-2">
               {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-[var(--accent-blue)]/10 px-3 py-1 text-xs text-[var(--accent-blue)]"
-                >
+                <Badge key={tag} variant="secondary" className="text-xs font-normal">
                   {tag}
-                </span>
+                </Badge>
               ))}
             </div>
           )}
         </header>
 
-        <MDXRemote
-          source={post.content}
-          options={{
-            mdxOptions: {
-              rehypePlugins: [rehypeHighlight, rehypeSlug],
-            },
-          }}
-        />
+        <Separator className="mb-8" />
+
+        <div className="prose max-w-none">
+          <MDXRemote
+            source={post.content}
+            options={{
+              mdxOptions: {
+                rehypePlugins: [rehypeHighlight, rehypeSlug],
+              },
+            }}
+          />
+        </div>
       </article>
     </AnimatedSection>
   );

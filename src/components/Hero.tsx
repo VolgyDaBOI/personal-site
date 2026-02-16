@@ -4,24 +4,31 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section className="pb-16">
-      <motion.h1
+    <section className="pb-12">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-5xl sm:text-7xl font-bold tracking-tight"
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <span className="bg-gradient-to-r from-[var(--accent-blue)] via-purple-400 to-[var(--accent-purple)] bg-clip-text text-transparent">
-          Michael Volgin
-        </span>
-      </motion.h1>
+        <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-4">
+          Developer &amp; Builder
+        </p>
+        <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.1]">
+          <span className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-purple)] bg-clip-text text-transparent">
+            Michael
+          </span>
+          <br />
+          <span className="text-foreground">Volgin</span>
+        </h1>
+      </motion.div>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-        className="mt-6 text-lg sm:text-xl text-[var(--muted)] max-w-xl"
+        transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+        className="mt-6 text-lg text-muted-foreground max-w-lg leading-relaxed"
       >
-        Building things that matter.
+        I build tools and products that solve real problems.
+        Currently focused on shipping fast and learning every day.
       </motion.p>
     </section>
   );
