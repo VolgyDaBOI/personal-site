@@ -21,8 +21,21 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.title} - Michael Volgin`,
+    title: post.title,
     description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Michael Volgin"],
+    },
+    twitter: {
+      card: "summary",
+      title: post.title,
+      description: post.description,
+      creator: "@michag0d",
+    },
   };
 }
 
@@ -35,8 +48,25 @@ export default async function BlogPostPage({
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    author: {
+      "@type": "Person",
+      name: "Michael Volgin",
+      url: "https://michagod.com",
+    },
+  };
+
   return (
     <AnimatedSection>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <article>
         <Link
           href="/blog"

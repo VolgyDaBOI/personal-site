@@ -1,0 +1,19 @@
+# Michael Volgin
+
+> SWE at Enclave, shipping secure SaaS and sometimes words.
+
+## About
+
+Michael Volgin is a software engineer at Enclave (https://enclave.ai), focused on building secure SaaS products. He writes about engineering, security, and building products.
+
+## Links
+
+- Website: https://michagod.com
+- GitHub: https://github.com/VolgyDaBOI
+- LinkedIn: https://www.linkedin.com/in/michael-volgin/
+- X/Twitter: https://x.com/michag0d
+- Email: mikivo807@gmail.com
+
+## Blog
+
+Posts available at https://michagod.com/blog

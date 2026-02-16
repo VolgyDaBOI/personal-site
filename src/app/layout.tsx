@@ -12,9 +12,39 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://michagod.com";
+
 export const metadata: Metadata = {
-  title: "Michael Volgin",
-  description: "Personal website and blog of Michael Volgin",
+  title: {
+    default: "Michael Volgin",
+    template: "%s - Michael Volgin",
+  },
+  description:
+    "Michael Volgin — SWE at Enclave, shipping secure SaaS and sometimes words. Blog on engineering, security, and building products.",
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: "Michael Volgin",
+    description:
+      "SWE at Enclave, shipping secure SaaS and sometimes words.",
+    url: siteUrl,
+    siteName: "Michael Volgin",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Michael Volgin",
+    description:
+      "SWE at Enclave, shipping secure SaaS and sometimes words.",
+    creator: "@michag0d",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
 };
 
 export default function RootLayout({

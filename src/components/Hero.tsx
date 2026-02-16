@@ -14,7 +14,16 @@ export function Hero() {
           Michael Volgin
         </h1>
         <p className="mt-3 text-muted-foreground leading-relaxed max-w-lg">
-          Founding Engineer @ Enclave, AI &amp; App Sec.
+          SWE @{" "}
+          <a
+            href="https://enclave.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground hover:opacity-70 transition-opacity"
+          >
+            enclave
+          </a>
+          , shipping secure SaaS and sometimes words
         </p>
       </motion.div>
     </section>

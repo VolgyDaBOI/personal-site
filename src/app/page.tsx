@@ -7,11 +7,33 @@ import { Separator } from "@/components/ui/separator";
 import { getAllPosts } from "@/lib/blog";
 import Link from "next/link";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Michael Volgin",
+  url: "https://michagod.com",
+  jobTitle: "Software Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Enclave",
+    url: "https://enclave.ai",
+  },
+  sameAs: [
+    "https://github.com/VolgyDaBOI",
+    "https://www.linkedin.com/in/michael-volgin/",
+    "https://x.com/michag0d",
+  ],
+};
+
 export default function Home() {
   const recentPosts = getAllPosts().slice(0, 3);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero />
       <SocialLinks />
 
