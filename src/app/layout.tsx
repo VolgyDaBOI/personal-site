@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  other: {
+    "Content-Signal": "ai-train=yes, search=yes, ai-input=yes",
+  },
   alternates: {
     canonical: siteUrl,
   },

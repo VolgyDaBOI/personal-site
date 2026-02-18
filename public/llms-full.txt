@@ -1,0 +1,61 @@
+# Michael Volgin — Full Site Content
+
+> SWE at Enclave, shipping secure SaaS and sometimes words.
+
+---
+
+## Hello World
+
+*Published: 2026-02-16*
+
+Welcome to my blog! This is where I'll share thoughts on technology, building products, and things I find interesting.
+
+### What to expect
+
+I'll be writing about:
+
+- **Engineering** - deep dives into tools and tech I use
+- **Building** - lessons from building products
+- **Life** - occasional thoughts on everything else
+
+### A code example
+
+Here's some TypeScript to kick things off:
+
+```typescript
+const greeting = (name: string): string => {
+  return `Hello, ${name}! Welcome to my blog.`;
+};
+
+console.log(greeting("world"));
+```
+
+Stay tuned for more posts. Thanks for reading!
+
+---
+
+## Why I Write
+
+*Published: 2026-02-16*
+
+There's something funny about spending 10 hours writing code and then choosing to open a text editor to write words. But here we are.
+
+I build security software for a living. Most of my day is spent thinking about how things break — auth flows, API boundaries, the thousand ways a seemingly fine system can go sideways. It's satisfying work, but it lives in private repos and internal docs that nobody will ever read.
+
+Writing here is different. It's thinking out loud. When I try to explain something I thought I understood, I usually find out I only half-understood it. The act of writing is the act of figuring out what I actually know.
+
+### What you'll find here
+
+Mostly technical stuff:
+
+- Things I learned building secure SaaS at Enclave
+- Tools and workflows that actually make a difference
+- Opinions about software that I'll probably regret later
+
+Sometimes not-technical stuff. I haven't figured out the ratio yet.
+
+### The bar
+
+I'm not trying to write something groundbreaking every time. The bar is simple: would I have wanted to read this six months ago? If yes, ship it. If no, keep thinking.
+
+That's it. No newsletter, no schedule, no promises. Just words when I have something worth saying.

@@ -17,3 +17,14 @@ Michael Volgin is a software engineer at Enclave (https://enclave.ai), focused o
 ## Blog
 
 Posts available at https://michagod.com/blog
+
+- [Hello World](https://michagod.com/blog/hello-world) (2026-02-16): My first blog post - welcome to my corner of the internet.
+- [Why I Write](https://michagod.com/blog/why-i-write) (2026-02-16): On shipping code all day and then opening a text editor anyway.
+
+## Full Content
+
+For full blog content in markdown, see https://michagod.com/llms-full.txt
+
+## Content Signal
+
+ai-train=yes, search=yes, ai-input=yes
