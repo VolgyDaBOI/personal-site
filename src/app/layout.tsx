@@ -62,7 +62,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
         <KonamiTicker />
-        <main className="mx-auto max-w-3xl px-6 py-20">
+        <main className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-20">
           {children}
         </main>
       </body>
