@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-
 export function Hero() {
   return (
     <section className="pb-10">
@@ -9,12 +8,13 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
+        className="flex flex-col gap-3"
       >
         <h1 className="text-2xl font-semibold tracking-tight">
           Michael Volgin
         </h1>
-        <p className="mt-3 text-muted-foreground leading-relaxed max-w-lg">
-          SWE @{" "}
+        <p className="text-muted-foreground leading-relaxed max-w-lg">
+          Building secure SaaS @{" "}
           <a
             href="https://enclave.ai"
             target="_blank"
@@ -23,7 +23,7 @@ export function Hero() {
           >
             enclave
           </a>
-          , shipping secure SaaS and sometimes words
+          {" "}and sometimes writing words
         </p>
       </motion.div>
     </section>

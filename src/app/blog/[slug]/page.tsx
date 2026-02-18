@@ -5,7 +5,11 @@ import rehypeSlug from "rehype-slug";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Home } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function generateStaticParams() {
   const posts = getAllPosts();
@@ -68,20 +72,39 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       <article>
-        <Link
-          href="/blog"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          &larr; Back to blog
-        </Link>
+        <nav className="flex items-center gap-1 text-xs text-muted-foreground font-mono">
+          <Button variant="ghost" size="xs" asChild>
+            <Link href="/">
+              <Home className="size-3" /> ~
+            </Link>
+          </Button>
+          <span>/</span>
+          <Button variant="ghost" size="xs" asChild>
+            <Link href="/blog">blog</Link>
+          </Button>
+          <span>/</span>
+          <span className="text-foreground">{slug}</span>
+          <div className="ml-auto mr-2">
+            <ThemeToggle />
+          </div>
+        </nav>
 
         <header className="mt-8 mb-6">
           <h1 className="text-2xl font-semibold tracking-tight mb-2">{post.title}</h1>
           <div className="flex items-center gap-3 text-sm text-muted-foreground">
-            <time>{post.date}</time>
+            <time>{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</time>
             <span>&middot;</span>
             <span>{post.readingTime}</span>
           </div>
+          {post.tags && post.tags.length > 0 && (
+            <div className="flex gap-1.5 mt-3">
+              {post.tags.map((tag) => (
+                <Badge key={tag} variant="secondary" className="text-[10px] px-1.5 py-0">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          )}
         </header>
 
         <Separator className="mb-8" />
