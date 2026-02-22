@@ -13,6 +13,7 @@ export interface BlogPost {
   tags: string[];
   readingTime: string;
   content: string;
+  image?: string;
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -35,6 +36,7 @@ export function getAllPosts(): BlogPost[] {
       tags: data.tags ?? [],
       readingTime: stats.text,
       content,
+      image: data.image,
     };
   });
 

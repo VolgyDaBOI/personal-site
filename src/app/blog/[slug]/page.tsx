@@ -33,12 +33,14 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       authors: ["Michael Volgin"],
+      ...(post.image && { images: [{ url: post.image, width: 1600, height: 900 }] }),
     },
     twitter: {
-      card: "summary",
+      card: post.image ? "summary_large_image" : "summary",
       title: post.title,
       description: post.description,
       creator: "@michag0d",
+      ...(post.image && { images: [post.image] }),
     },
   };
 }
